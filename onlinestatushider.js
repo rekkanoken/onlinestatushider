@@ -1,35 +1,34 @@
-META{"name":"OnlineStatusHiderPlugin","rekkanoken":"Online Status Hider Plugin","website":"https://twitter.com/rekkan0ken"}*//
-
-class OnlineStatusHiderPlugin {
+//META{"name":"OnlineStatusHiderPlugin","rekkanoken":"Online Status Hider Plugin","website":"https://twitter.com/rekkan0ken"}*//
+class OnlineIndicatorRemover {
     getName() {
-        return "Online Status Hider Plugin";
+        return "Online Indicator Remover";
     }
 
     getDescription() {
-        return "Hides all online statuses on Discord.";
+        return "removes the online indicator in discord.";
     }
 
     start() {
-        this.hideOnlineStatuses();
+        this.removeOnlineIndicator();
     }
 
     stop() {
-        this.restoreOnlineStatuses();
+        this.restoreOnlineIndicator();
     }
 
-    hideOnlineStatuses() {
+    removeOnlineIndicator() {
         const styleElement = document.createElement("style");
-        styleElement.setAttribute("id", "online-status-hider-plugin-style");
+        styleElement.setAttribute("id", "online-indicator-remover-style");
         styleElement.textContent = `
             .member .status {
-                display: none !important;
+                background-color: transparent !important;
             }
         `;
         document.head.appendChild(styleElement);
     }
 
-    restoreOnlineStatuses() {
-        const styleElement = document.getElementById("online-status-hider-plugin-style");
+    restoreOnlineIndicator() {
+        const styleElement = document.getElementById("online-indicator-remover-style");
         if (styleElement) {
             styleElement.remove();
         }
