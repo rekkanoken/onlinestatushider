@@ -1,4 +1,4 @@
-META{"name":"OnlineStatusHiderPlugin","rekka":"Online Status Hider Plugin","website":"https://twitter.com/rekkan0ken"}*//
+META{"name":"OnlineStatusHiderPlugin","rekkanoken":"Online Status Hider Plugin","website":"https://twitter.com/rekkan0ken"}*//
 
 class OnlineStatusHiderPlugin {
     getName() {
